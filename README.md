@@ -1,5 +1,4 @@
 # Assignment3-Implementing-Lists
-# List Data Structures Assignment
 
 ## Deadline
 **Thursday, February 15, 2024, 9:59 PM**
