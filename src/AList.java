@@ -26,9 +26,9 @@ public class AList {
             throw new IndexOutOfBoundsException("Invalid position: " + pos);
         }
         for (int i = pos; i < size - 1; i++) {
-            songs[i] = songs[i + 1]; //Shift the elements
+            songs[i] = songs[i + 1]; //Shift the elements after pos back
         }
-        songs[size - 1] = null;
+        songs[size - 1] = null; //Set the last to null
         size--;
     }
 
