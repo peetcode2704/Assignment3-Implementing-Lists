@@ -1,18 +1,16 @@
+public class SLListGeneric<T> {
+    private SLNodeGeneric<T> head;
 
-public class SLList {
-    private SLNode head;
-
-    // Constructor: Creates an empty list
-    public SLList() {
+    public SLListGeneric() {
         this.head = null;
     }
 
-    public void addy(Song s) {
-        SLNode newNode = new SLNode(s);
+    public void addy(T obj) {
+        SLNodeGeneric<T> newNode = new SLNodeGeneric<>(obj);
         if (head == null) {
             head = newNode;
         } else {
-            SLNode current = head;
+            SLNodeGeneric<T> current = head;
             while (current.next != null) {
                 current = current.next;
             }
@@ -26,24 +24,25 @@ public class SLList {
             return;
         }
 
-
         if (pos == 0) {
             head = head.next;
             return;
         }
 
-        SLNode current = head;
+        SLNodeGeneric<T> current = head;
 
         for (int i = 0; current != null && i < pos - 1; i++) {
             current = current.next;
         }
 
         if (current == null || current.next == null) {
-            System.out.println("Position out of range.");
+            System.out.println("Out of range.");
             return;
         }
+
         current.next = current.next.next;
     }
+
     @Override
     public String toString() {
         if (head == null) {
@@ -51,32 +50,14 @@ public class SLList {
         }
 
         String result = "";
-        SLNode current = head;
+        SLNodeGeneric<T> current = head;
         while (current != null) {
-            result += current.song.toString() + "\n";
+            result += current.obj.toString() + "\n";
             current = current.next;
         }
+        //print to console
         System.out.println(result);
         return result;
-    }
-
-
-    public static void main(String[] args) {
-        SLList playlist2 = new SLList();
-
-        Song song1 = new Song("Despacito", "Peter",3.2);
-        Song song2 = new Song("El Pibe De Mi Barrio","Dr. Krapula",2.47);
-        Song song3 = new Song("Guli guli","YoungPeet",99.9);
-        playlist2.addy(song1);
-        playlist2.addy(song2);
-        playlist2.addy(song3);
-
-        playlist2.toString();
-
-        //System.out.println(playlist);
-
-        playlist2.removey(1);
-        //System.out.println(playlist);
     }
 
 }
