@@ -20,6 +20,32 @@ public class SLList {
         }
     }
 
+    public void removey(int pos) {
+        if (head == null || pos < 0) {
+            System.out.println("Invalid position or empty list.");
+            return;
+        }
+
+
+        if (pos == 0) {
+            head = head.next;
+            return;
+        }
+
+        SLNode current = head;
+
+        for (int i = 0; current != null && i < pos - 1; i++) {
+            current = current.next;
+        }
+
+        if (current == null || current.next == null) {
+            System.out.println("Position out of range.");
+            return;
+        }
+        current.next = current.next.next;
+    }
+
+
 
 
 }
