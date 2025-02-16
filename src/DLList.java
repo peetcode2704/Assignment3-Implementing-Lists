@@ -72,9 +72,24 @@ public class DLList {
         System.out.println(result);
         return result;
     }
+    public static void main(String[] args) {
+        SLList playlist3 = new SLList();
 
+        Song song1 = new Song("Despacito", "Peter",3.2);
+        Song song2 = new Song("El Pibe De Mi Barrio","Dr. Krapula",2.47);
+        Song song3 = new Song("Guli guli","YoungPeet",99.9);
+        playlist3.addy(song1);
+        playlist3.addy(song2);
+        playlist3.addy(song3);
 
+        playlist3.toString();
 
+        //System.out.println(playlist3);
 
+        playlist3.removey(1);
+        //System.out.println(playlist3);
+        playlist3.toString();
+
+    }
 
 }
