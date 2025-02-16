@@ -50,7 +50,7 @@ public class SLList {
             return "The list is empty.";
         }
 
-        String result = "Songs in Playlist:\n";
+        String result = "";
         SLNode current = head;
         while (current != null) {
             result += current.song.toString() + "\n";
