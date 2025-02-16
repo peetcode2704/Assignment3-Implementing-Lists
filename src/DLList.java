@@ -22,5 +22,59 @@ public class DLList {
             tail = newNode;
         }
     }
+    public void removy(int pos) {
+        if (head == null) {
+            System.out.println("List is empty.");
+            return;
+        }
+        DLNode current = head;
+        int index = 0;
+        while (current != null && index < pos) {
+            current = current.next;
+            index++;
+        }
+        if (current == null) {
+            System.out.println("Out of bounds error");
+            return;
+        }
+
+        //When try to remove the head node
+        if (current == head) {
+            head = current.next;
+            if (head != null) {
+                head.prev = null;
+            }
+        }
+        //When try to remove the tail node
+        else if (current == tail) {
+            tail = current.prev;
+            if (tail != null) {
+                tail.next = null;
+            }
+        }
+        else {
+            current.prev.next = current.next;
+            current.next.prev = current.prev;
+        }
+    }
+
+    public String toString() {
+        if (head == null) {
+            return "The list is empty.";
+        }
+
+        String result = "";
+        DLNode current = head;
+        while (current != null) {
+            result += current.song.toString() + "\n";
+            current = current.next;
+        }
+        System.out.println(result);
+        return result;
+    }
+
+
+
+
 
 }
