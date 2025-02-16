@@ -45,6 +45,15 @@ public class SLList {
         current.next = current.next.next;
     }
 
+    public String toString() {
+        String result = "";
+        SLNode current = head;
+        while (current != null) {
+            result += current.song.toString() + "\n";
+            current = current.next;
+        }
+        return result;
+    }
 
 
 
