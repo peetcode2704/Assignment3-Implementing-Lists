@@ -18,7 +18,7 @@ public class SLListGeneric<T> {
         }
     }
 
-    public void removey(int pos) {
+    public void removy(int pos) {
         if (head == null || pos < 0) {
             System.out.println("Invalid position or empty list.");
             return;

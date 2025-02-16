@@ -20,7 +20,7 @@ public class SLList {
         }
     }
 
-    public void removey(int pos) {
+    public void removy(int pos) {
         if (head == null || pos < 0) {
             System.out.println("Invalid position or empty list.");
             return;
@@ -75,7 +75,7 @@ public class SLList {
 
         //System.out.println(playlist);
 
-        playlist2.removey(1);
+        playlist2.removy(1);
         //System.out.println(playlist);
     }
 

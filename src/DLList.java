@@ -87,7 +87,7 @@ public class DLList {
 
         //System.out.println(playlist3);
 
-        playlist3.removey(1);
+        playlist3.removy(1);
         //System.out.println(playlist3);
         playlist3.toString();
 

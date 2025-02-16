@@ -7,7 +7,7 @@ public class Main {
         Song song1 = new Song("Despacito", "Peter",3.2);
         Song song2 = new Song("El Pibe De Mi Barrio","Dr. Krapula",2.47);
         Song song3 = new Song("Guli guli","YoungPeet",99.9);
-        playList.addy(song1);
+
         playList.addy(song2);
         playList.addy(song3);
 
