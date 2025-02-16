@@ -46,15 +46,37 @@ public class SLList {
     }
 
     public String toString() {
-        String result = "";
+        if (head == null) {
+            return "The list is empty.";
+        }
+
+        String result = "Songs in Playlist:\n";
         SLNode current = head;
         while (current != null) {
             result += current.song.toString() + "\n";
             current = current.next;
         }
+        System.out.println(result);
         return result;
     }
 
 
+    public static void main(String[] args) {
+        SLList playlist2 = new SLList();
+
+        Song song1 = new Song("Despacito", "Peter",3.2);
+        Song song2 = new Song("El Pibe De Mi Barrio","Dr. Krapula",2.47);
+        Song song3 = new Song("Guli guli","YoungPeet",99.9);
+        playlist2.addy(song1);
+        playlist2.addy(song2);
+        playlist2.addy(song3);
+
+        playlist2.toString();
+
+        //System.out.println(playlist);
+
+        playlist2.removey(1);
+        //System.out.println(playlist);
+    }
 
 }
