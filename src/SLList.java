@@ -44,7 +44,7 @@ public class SLList {
         }
         current.next = current.next.next;
     }
-
+@Override
     public String toString() {
         if (head == null) {
             return "The list is empty.";

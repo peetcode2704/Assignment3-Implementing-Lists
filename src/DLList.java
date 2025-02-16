@@ -58,6 +58,7 @@ public class DLList {
         }
     }
 
+    @Override
     public String toString() {
         if (head == null) {
             return "The list is empty.";
