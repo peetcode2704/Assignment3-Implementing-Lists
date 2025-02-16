@@ -1,23 +1,26 @@
-public class AList {
+public class AListGeneric<T> {
     private int maxSize;
     private int size;
-    private Song[] songs;
+    private T[] obj;
 
-    public AList() {
+    public AListGeneric() {
         maxSize = 10;
         size = 0;
-        songs = new Song[maxSize];
+        obj = (T[]) new Object[maxSize];
     }
 
-    public void addy(Song p) {
-        songs[size] = p;
-        if (size > maxSize) {
+    public void addy(T element) {
+        if (size >= maxSize) {
             maxSize *= 2;
-            Song[] newSong = new Song[maxSize];
-            for (int i = 0; i < newSong.length; i++) {
-                newSong[i] = songs[i];
+            T[] newElements = (T[]) new Object[maxSize];
+
+            // Copy elements from the old array to the new one
+            for (int i = 0; i < size; i++) {
+                newElements[i] = obj[i];
             }
+            obj = newElements;  // Point to the new array
         }
+        obj[size] = element;
         size++;
     }
 
@@ -25,10 +28,11 @@ public class AList {
         if (pos < 0 || pos >= size) {
             throw new IndexOutOfBoundsException("Invalid position: " + pos);
         }
+
         for (int i = pos; i < size - 1; i++) {
-            songs[i] = songs[i + 1]; //Shift the elements after pos back
+            obj[i] = obj[i + 1]; // Shift elements to the left
         }
-        songs[size - 1] = null; //Set the last to null
+        obj[size - 1] = null;
         size--;
     }
 
@@ -38,12 +42,10 @@ public class AList {
         }
         String result = "";
         for (int i = 0; i < size; i++) {
-            result += songs[i].toString() + "\n";
+            result += obj[i].toString() + "\n";
             //Test in Console
             System.out.println(result);
         }
         return result;
     }
-
 }
-
